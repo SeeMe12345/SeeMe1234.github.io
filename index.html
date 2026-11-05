@@ -1,11 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>หน้าเว็บของชิน</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ชิน | My Space</title>
+    <!-- นำเข้าฟอนต์ Prompt จาก Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4ece6; /* สีพื้นหลังเอิร์ธโทน */
+            --text-color: #4a3f35; /* สีข้อความน้ำตาลเข้ม */
+            --card-bg: #ffffff;
+            --accent-color: #8c7a6b; /* สีเน้น น้ำตาลเทา */
+            --hover-color: #a89f91;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background: var(--card-bg);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        .link-btn {
+            display: block;
+            width: 100%;
+            padding: 12px 0;
+            margin-bottom: 12px;
+            background-color: transparent;
+            color: var(--text-color);
+            text-decoration: none;
+            border: 2px solid var(--accent-color);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            font-weight: 400;
+            box-sizing: border-box;
+        }
+
+        .link-btn:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        #greeting {
+            font-size: 0.85rem;
+            margin-top: 25px;
+            color: #999;
+            font-weight: 300;
+        }
+    </style>
 </head>
 <body>
-    <h1>สวัสดีครับ! นี่คือหน้าเว็บของชินเอง 🐢</h1>
-    <p>กำลังทดสอบระบบ GitHub Pages ครับ</p>
+
+    <div class="container">
+        <h1>สวัสดีครับ, ผมชิน 🐢</h1>
+        <p>Digital Technology Student | Web Developer</p>
+
+        <!-- เปลี่ยน href เป็นลิงก์ที่ต้องการได้เลย -->
+        <a href="#" class="link-btn">ผลงาน (Portfolio)</a>
+        <a href="#" class="link-btn">บทความ / กวี</a>
+        <a href="#" class="link-btn">ติดต่อ (Contact)</a>
+
+        <!-- ส่วนนี้ JS จะมาคำนวณเวลาและแสดงข้อความ -->
+        <div id="greeting"></div>
+    </div>
+
+    <script>
+        // สคริปต์เล็กๆ สำหรับทักทายตามช่วงเวลา
+        const hour = new Date().getHours();
+        let greetingText = "";
+        
+        if (hour >= 5 && hour < 12) {
+            greetingText = "อรุณสวัสดิ์ครับ เริ่มต้นวันใหม่ด้วยความสดใสนะ ☀️";
+        } else if (hour >= 12 && hour < 18) {
+            greetingText = "สวัสดีตอนบ่ายครับ ทานข้าวหรือยัง? 🍽️";
+        } else {
+            greetingText = "สวัสดีตอนค่ำครับ พักผ่อนฟังเพลงสบายๆ นะ 🌙";
+        }
+
+        document.getElementById('greeting').innerText = greetingText;
+    </script>
 </body>
 </html>
